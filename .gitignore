@@ -1,0 +1,23 @@
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+.vscode/
+
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+.env.test
+
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
