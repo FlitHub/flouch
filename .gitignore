@@ -22,3 +22,5 @@ node_modules/
 /service
 /model
 /shared
+index*.js
+index*.d.ts
