@@ -1,8 +1,3 @@
 node_modules/
-src/main/docker/
-jest.config.js
-webpack/
-target/
-build/
-node/
-postcss.config.js
+lib/
+spec/
