@@ -1,8 +1,8 @@
 import Nano from "nano";
 import logger from "@shared/Logger";
-import { BulkOperationError } from "@entities/error/BulkOperationError";
-import { EntityCouchDbMapper } from "@repository/mapper/entity-mapper";
-import { UniqueResponseExpectedError } from "@entities/error/UniqueResponseExpectedError";
+import { BulkOperationError } from "src/model/error/BulkOperationError";
+import { EntityCouchDbMapper } from "@model/mapper/entity-mapper";
+import { UniqueResponseExpectedError } from "src/model/error/UniqueResponseExpectedError";
 
 export interface NoParamConstructor<T> {
   new (): T;
@@ -77,7 +77,7 @@ implements IProcessCouchDbResponse<T> {
   }
 
   public processQueryForOneResponse(response: Nano.MangoResponse<any>): T {
-    logger.info("Process Query Response for entity with id ");
+    logger.info("Process Query Response");
     if (response.warning) {
       logger.warn(response.warning);
     }

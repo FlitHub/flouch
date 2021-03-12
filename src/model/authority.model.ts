@@ -1,4 +1,4 @@
-import { AbstractCouchDbEntity } from "@entities/abstract-couchdb.model";
+import { AbstractCouchDbEntity } from "src/model/abstract-couchdb.model";
 
 export interface IAuthority {
   name?: string;

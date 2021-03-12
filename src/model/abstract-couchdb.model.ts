@@ -1,6 +1,6 @@
 import { toSnakeCase } from "@shared/functions";
 import Nano from "nano";
-import { EntityType } from "./entity-type";
+import { EntityType } from "./entity-type.model";
 
 export interface IAbstractCouchDbEntity extends Nano.MaybeDocument {
   createdBy?: string;
