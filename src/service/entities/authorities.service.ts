@@ -1,7 +1,7 @@
-import { Authority } from "@entities/authority";
-import { EntityType } from "@entities/entity-type";
-import { CrudRepository } from "@repository/CrudRepository";
+import { Authority } from "@model/authority.model";
+import { EntityType } from "@model/entity-type.model";
 import { ProcessCouchDbResponse } from "@service/process-response.service";
+import { CrudService } from "@service/crud.service";
 
 class AuthoritiesProcessCouchDbResponse extends ProcessCouchDbResponse<Authority> {
   constructor() {
@@ -9,7 +9,7 @@ class AuthoritiesProcessCouchDbResponse extends ProcessCouchDbResponse<Authority
   }
 }
 
-export class AuthoritiesRepository extends CrudRepository<Authority> {
+export class AuthoritiesService extends CrudService<Authority> {
   constructor() {
     super(new AuthoritiesProcessCouchDbResponse(), EntityType.AUTHORITY);
   }

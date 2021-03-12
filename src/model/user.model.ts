@@ -1,7 +1,8 @@
-import { AbstractCouchDbEntity } from "@entities/abstract-couchdb.model";
-import { EntityType } from "./entity-type";
+import { AbstractCouchDbEntity } from "src/model/abstract-couchdb.model";
+import Nano from "nano";
+import { EntityType } from "./entity-type.model";
 
-export interface IUser {
+export interface IUser extends Nano.MaybeDocument {
   username?: string | null;
   password?: string | null;
   firstName?: string | null;

@@ -1,9 +1,9 @@
-import { EntityType } from "@entities/entity-type";
-import { User, IUser } from "@entities/user";
-import { CrudRepository } from "@repository/CrudRepository";
+import { EntityType } from "@model/entity-type.model";
+import { User, IUser } from "@model/user.model";
 import { ProcessCouchDbResponse } from "@service/process-response.service";
+import { CrudService, ICrudService } from "@service/crud.service";
 
-export interface IUserService {
+export interface IUserService extends ICrudService<User> {
   getOneByUserName: (username: string) => Promise<IUser | null>;
 }
 
@@ -13,7 +13,7 @@ class UserProcessCouchDbResponse extends ProcessCouchDbResponse<User> {
   }
 }
 
-class UserService extends CrudRepository<User> implements IUserService {
+export class UserService extends CrudService<User> implements IUserService {
   constructor() {
     super(new UserProcessCouchDbResponse(), EntityType.USER);
   }
@@ -42,5 +42,3 @@ class UserService extends CrudRepository<User> implements IUserService {
       });
   }
 }
-
-export default UserService;
