@@ -1,0 +1,11 @@
+{
+  "pouchdbConfig": {
+    "log": true,
+    "databases": [
+      {
+        "name": "PackageJsonDb",
+        "type": "LEVEL"
+      }
+    ]
+  }
+}

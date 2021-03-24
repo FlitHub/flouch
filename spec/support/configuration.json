@@ -1,0 +1,42 @@
+{
+  "log": true,
+  "databases": [
+    { "name": "TestLevelDb", "type": "LEVEL" },
+    { "name": "TestIndexedDb", "type": "INDEXED" },
+    {
+      "id": "testCouchDbId",
+      "url": "http://admin:admin@test.com:3000/testCouchDb",
+      "type": "COUCH"
+    },
+    {
+      "id": "testCouchDbId",
+      "name": "testCouchWithNameAttr",
+      "url": "https://admin:admin@test.com:3000",
+      "type": "COUCH"
+    },
+    {
+      "id": "testCouchDbId",
+      "name": "testCouchWithNameAttrAndUrl",
+      "url": "https://admin:admin@test.com:3000/NameToReplaceByNameAttr",
+      "type": "COUCH"
+    },
+    {
+      "name": "testCouchAttrAndUrl",
+      "url": "https://admin:admin@test.com:3000",
+      "hostname": "newhostname",
+      "port": 3000,
+      "username": "admin",
+      "password": "admin",
+      "type": "COUCH"
+    },
+    {
+      "name": "testLocalCouchAttrAndUrl",
+      "url": "http://admin:admin@127.0.0.1:3000/",
+      "hostname": "127.0.0.1",
+      "port": 5984,
+      "username": "admin",
+      "password": "admin",
+      "type": "COUCH"
+    }
+  ]
+}

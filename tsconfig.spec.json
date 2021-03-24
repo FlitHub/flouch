@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "esNext",
+    "target": "es6",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["src", "spec"],
+  "exclude": ["node_modules", "lib"],
+  "compileOnSave": false,
+  "buildOnSave": false
+}
