@@ -14,16 +14,17 @@
     "url": "https://github.com/FlitHub/pouchdb-config.git"
   },
   "homepage": "https://github.com/FlitHub/pouchdb-config.git",
-  "version": "0.0.2",
-  "main": "lib/main.js",
-  "types": "lib/pouchdb-config.d.ts",
-  "module": "lib/main.esm.js",
+  "version": "0.0.9",
+  "main": "main.js",
+  "types": "pouchdb-config.d.ts",
+  "module": "main.esm.js",
   "files": [
     "lib/src",
-    "lib/main.js",
-    "lib/pouchdb-config.d.ts",
-    "package.json"
+    "./main.js",
+    "./pouchdb-config.d.ts",
+    "./package.json"
   ],
+  "bin": "./main.js",
   "scripts": {
     "build-ts": "./node_modules/.bin/ts-node build.ts",
     "lint": "eslint . --ext .ts",
@@ -82,6 +83,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-preserve-shebangs": "^0.2.0",
     "supertest": "^6.1.3",
     "terser": "^5.6.0",
     "ts-jest": "^26.5.4",

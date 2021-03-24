@@ -3,6 +3,7 @@ import { terser } from "rollup-plugin-terser";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
+const { preserveShebangs } = require('rollup-plugin-preserve-shebangs');
 
 const EXTERNAL = [
   "jet-logger",
@@ -16,6 +17,7 @@ const EXTERNAL = [
 ];
 
 const PLUGINS = [
+  preserveShebangs(),
   commonjs(),
   resolve({
     mainFields: ["module", "main"],
@@ -51,7 +53,7 @@ export default [
   },
   {
     input: "./index.d.ts",
-    output: [{ file: "lib/pouchdb-config.d.ts", format: "es" }],
+    output: [{ file: "./pouchdb-config.d.ts", format: "es" }],
     plugins: [dts()],
   },
 ];
