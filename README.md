@@ -62,7 +62,7 @@ You can create  `validate` method returns an array of `ValidationError` objects.
 Create a config file  **in a terminal window**
 
 ``` bash
-touch storage.config.js
+cat > pouchdb.config.js
 ```
 
 ## Database types
