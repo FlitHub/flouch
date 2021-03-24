@@ -1,21 +1,57 @@
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import dts from "rollup-plugin-dts";
+
+const EXTERNAL = [
+  "jet-logger",
+  "class-transformer",
+  "class-validator",
+  "pouchorm",
+  "url",
+  "path",
+  "graceful-fs",
+  "jsonlint",
+];
+
+const PLUGINS = [
+  commonjs(),
+  resolve({
+    mainFields: ["module", "main"],
+  }),
+  typescript({
+    useTsconfigDeclarationDir: true,
+    tsconfigOverride: {
+      include: ["main.ts", "src", "spec"],
+      exclude: ["node_modules", "spec", "**/*d.ts"],
+    },
+  }),
+  terser(),
+];
 
 export default [
   {
-    input: "./src/index.ts",
+    input: "./main.ts",
     output: {
-      file: "./index.esm.js",
+      file: "./main.esm.js",
       format: "esm",
     },
-    plugins: [typescript()],
+    external: EXTERNAL,
+    plugins: PLUGINS,
   },
   {
-    input: "./src/index.ts",
+    input: "./main.ts",
     output: {
-      file: "./index.js",
+      file: "./main.js",
       format: "cjs",
     },
-    plugins: [typescript(), terser()],
+    external: EXTERNAL,
+    plugins: PLUGINS,
+  },
+  {
+    input: "./index.d.ts",
+    output: [{ file: "lib/pouchdb-config.d.ts", format: "es" }],
+    plugins: [dts()],
   },
 ];

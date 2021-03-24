@@ -1,26 +1,25 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "moduleResolution": "node",
     "module": "esNext",
     "target": "es5",
-    "lib": ["es2020", "es2015", "dom"],
+    "lib": ["es2020", "dom"],
     "outDir": "lib",
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
-    "declaration": true,
     "baseUrl": "./",
     "paths": {
       "@model/*": ["src/model/*"],
-      "@shared/*": ["src/shared/*"],
-      "@controllers/*": ["src/controllers/*"],
-      "@middlewares/*": ["src/middlewares/*"],
-      "@service/*": ["src/service/*"]
-    }
+      "@util/*": ["src/util/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "lib", "**/*.test.ts", "src/**/*.js"],
+  "include": ["main.ts", "index.d.ts", "src", "spec"],
+  "exclude": ["node_modules"],
   "compileOnSave": false,
   "buildOnSave": false
 }
