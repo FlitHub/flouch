@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["main.ts", "index.d.ts", "src", "spec"],
+  "include": ["main.ts", "main.js", "index.d.ts", "src", "spec"],
   "exclude": ["node_modules"],
   "compileOnSave": false,
   "buildOnSave": false

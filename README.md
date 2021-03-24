@@ -1,11 +1,10 @@
 
-# mpouchdb-config
+# pouchdb-config
 ![Awesome Badges](https://img.shields.io/badge/advice-dont_use_it_now-orange.svg)
 ![Awesome Badges](https://img.shields.io/badge/cause-still_in_development-blue.svg)
 ![PouchDB Logo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmiro.medium.com%2Fmax%2F1280%2F1*z6xxDAhcYb3qG5E61ArbhA.png)
 
 ![Maintained][maintained-badge]
-[![Git Build Status][build-badge]][build]
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
 [![Watch on GitHub][github-watch-badge]][github-watch][![Star on GitHub][github-star-badge]][github-star]
@@ -21,7 +20,8 @@ Currently runs with:
 
 With this lib, you can :
 
-- Easily configure pouchdb databases 
+- Easily configure pouchdb databases
+- Create it with the cli command
 
 ## Getting Started
 
@@ -34,11 +34,11 @@ npm i @npmineral/pouchdb-config
 ## Configuration file
 
 You can setup your configuration in several ways :
- - in `mconfig.config.js` or `mconfig.config.ts`
- - in `package.json` under `mpouch` attribute
+ - in `pouchdb.config.js` or `pouchdb.config.ts`
+ - in `package.json` under `pouchdbConfig` key
  - indicate the config file path when running the program
 ``` bash
- mpouchdb --config "path-to-file"
+ pouchdb-config --config "path-to-file"
 ```
 
 ## Usage
@@ -58,11 +58,10 @@ interface IDatabaseConfiguration {
   type?: POUCH_DB_TYPE;
 }
 ```
-You can create  `validate` method returns an array of `ValidationError` objects. Each `ValidationError` is:
 Create a config file  **in a terminal window**
 
 ``` bash
-touch storage.config.js
+cat > pouchdb.config.js
 ```
 
 ## Database types
